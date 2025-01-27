@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 0%);
+}
+
+#calculator {
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 15px;
+    max-width: 90%;
+    width: 400px; /* عرض مناسب للشاشات الصغيرة */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#display {
+    width: 100%;
+    padding: 20px;
+    font-size: 2.5rem; /* قياس مرن */
+    text-align: right; /* لجعل النص محاذاة لليمين */
+    border: none;
+    background-color: hsl(0, 0%, 20%);
+    color: rgb(249, 243, 243);
+    box-sizing: border-box; /* لتجنب المشاكل عند تغيير الحواف */
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* تقسيم الشبكة إلى 4 أعمدة */
+    gap: 10px;
+    padding: 15px; /* تقليل المساحة قليلاً */
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%; /* يجعل الأزرار تتكيف تلقائيًا مع الشبكة */
+    aspect-ratio: 1; /* لجعل الأزرار مربعة الشكل */
+    border-radius: 50%; /* الشكل الدائري */
+    border: none;
+    background-color: rgb(70, 68, 68);
+    color: white;
+    font-size: 1.5rem; /* حجم النص المرن */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+}
+
+button:active {
+    background-color: hsl(0, 0%, 50%);
+}
+
+.orange-button {
+    background-color: orange;
+}
+
+.orange-button:hover {
+    background-color: darkorange;
+}
+
+.orange-button:active {
+    background-color: hsl(35, 100%, 75%);
+}
+
+/* تحسين الاستجابة للشاشات الصغيرة */
+@media (max-width: 600px) {
+    #display {
+        font-size: 2rem; /* تصغير الخط قليلاً للشاشات الصغيرة */
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1.2rem; /* تقليل حجم النص */
+    }
+}
